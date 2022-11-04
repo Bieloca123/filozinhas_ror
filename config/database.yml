@@ -1,0 +1,25 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem "sqlite3"
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: filozinhas_ror_development
+
+test:
+  <<: *default
+  database: filozinhas_ror_test
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
