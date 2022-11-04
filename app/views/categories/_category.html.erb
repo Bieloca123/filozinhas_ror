@@ -5,7 +5,7 @@
   </p>
 
   <p class="my-5">
-    <%= image_tag Rails.application.routes.url_helpers.rails_blob_url(category.image.variant(resize_to_limit: [100, 100])) if category.image.attached? %>
+    <%= image_tag url_for(category.image.variant(resize_to_limit: [100, 100])) if category.image.attached? %>
   </p>
 
   <% if action_name != "show" %>
